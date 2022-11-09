@@ -1,5 +1,6 @@
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Notfound from "../sherd/Notfound/Notfound";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -22,6 +23,11 @@ const router =createBrowserRouter([
                 path:'/register',
                 element: <Register></Register>
             },
+            {
+                path: '*',
+                element: <Notfound></Notfound>
+                
+                }
         ]
     }
 

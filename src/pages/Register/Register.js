@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assits/logo (2).png'
+import PageTittle from '../../sherd/PageTittle/PageTittle';
 import SocialLogin from '../../sherd/SocialLogin/SocialLogin';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
@@ -22,6 +23,7 @@ const Register = () => {
     }
     return (
         <div>
+            <PageTittle title='Register'></PageTittle>
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
                 <div>
@@ -101,7 +103,7 @@ const Register = () => {
                         <hr className="w-full" />
                     </div>
                     <div className="my-6 space-y-2">
-                        
+
                         <SocialLogin></SocialLogin>
                       
                     </div>

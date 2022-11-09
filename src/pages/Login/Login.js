@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assits/logo (2).png'
+import PageTittle from '../../sherd/PageTittle/PageTittle';
+import PageTitle from '../../sherd/PageTittle/PageTittle';
 import SocialLogin from '../../sherd/SocialLogin/SocialLogin';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 const Login = () => {
@@ -25,7 +27,10 @@ const Login = () => {
 
     return (
         <div>
+           
+           <PageTittle title='Login'></PageTittle>
           <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
+               
                 <div>
                     <a href="/">
                         <h3 className="text-4xl font-bold text-purple-600">
