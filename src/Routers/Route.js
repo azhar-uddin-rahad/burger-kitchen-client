@@ -1,5 +1,6 @@
 import Blog from "../pages/Blog/Blog";
 import CheckOut from "../pages/CheckOut/CheckOut";
+import AddServices from "../pages/Homes/AddServices/AddServices";
 import ServiceDetails from "../pages/Homes/Serviced/ServiceDetails";
 import Services from "../pages/Homes/Serviced/Services";
 import Login from "../pages/Login/Login";
@@ -49,6 +50,12 @@ const router =createBrowserRouter([
                 {
                     path:'/blog',
                     element:<Blog></Blog>
+                    
+                },
+                {
+                    path:'/addservices',
+                    element:<PrivateRouter><AddServices></AddServices></PrivateRouter>,
+                    loader: ()=> fetch(`https://berger-food-kitchen-server.vercel.app/services`)
                     
                 },
                 {

@@ -92,7 +92,7 @@ const Update = () => {
 
           <div className="flex items-center mt-4">
             <button  type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-regal-red rounded-md hover:bg-slate-900 hover:text-regal-red hover:border-2 hover:border-regal-red focus:outline-none">
-              Log in
+              Update Now
             </button>
           </div>
         </form>

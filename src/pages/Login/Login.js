@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assits/logo (2).png'
 import PageTittle from '../../sherd/PageTittle/PageTittle';
 import PageTitle from '../../sherd/PageTittle/PageTittle';
@@ -7,17 +7,39 @@ import SocialLogin from '../../sherd/SocialLogin/SocialLogin';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 const Login = () => {
     const {user,LoginUser}=useContext(AuthContext)
+    const navigate = useNavigate();
+  const location =useLocation();
+   const from=location.state?.from?.pathname || "/";
     const handleSignIn =event=>{
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password =form.password.value;
         LoginUser(email,password)
-        .then(result => {
+        .then(result =>{
             const user=result.user;
-            console.log(user);
-
-        })
+            const currentUser={
+              email:user.email
+            }
+            console.log(currentUser)
+          ///get jwt token
+            fetch('https://berger-food-kitchen-server.vercel.app/jwt',{
+              method: 'POST',
+              headers:{
+                'content-type':"application/json"
+              },
+              body: JSON.stringify(currentUser)
+    
+            })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              //local storage  is the easiest but not the best  place to stor jwt token 
+              localStorage.setItem('geniusToken',data.token)
+              navigate(from,{replace: true})
+            })
+    
+          })
         .catch(error => console.log(error))
  }
 

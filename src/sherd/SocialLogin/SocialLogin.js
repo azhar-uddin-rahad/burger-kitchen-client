@@ -3,6 +3,7 @@ import { AuthContext } from "../../pages/AuthProvider/AuthProvider";
 
 const SocialLogin = () => {
     const {providerLogin} =useContext(AuthContext)
+    
     const handleGoogleSignUp=()=>{
         providerLogin()
         .then(result =>{
