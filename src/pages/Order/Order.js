@@ -90,7 +90,7 @@ const Order = () => {
    <tbody>
    
    {
-   orders.map(order => <OrderRow key={order._id} order={order} handleDelete={handleDelete} handleStatusUpdate={handleStatusUpdate}></OrderRow>)
+   orders.map(order => <OrderRow key={order._id} order={order} handleDelete={handleDelete}  handleStatusUpdate={handleStatusUpdate}></OrderRow>)
   }
     
    </tbody>

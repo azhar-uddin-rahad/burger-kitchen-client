@@ -4,6 +4,7 @@ import Services from "../pages/Homes/Serviced/Services";
 import Login from "../pages/Login/Login";
 import Order from "../pages/Order/Order";
 import Register from "../pages/Register/Register";
+import Update from "../pages/Update/Update";
 import Notfound from "../sherd/Notfound/Notfound";
 import PrivateRouter from "./PrivateRouter";
 
@@ -44,6 +45,11 @@ const router =createBrowserRouter([
                     element: <PrivateRouter><Order></Order></PrivateRouter>
                     
                 },
+                {
+                    path:'/update/:id',
+                    element: <Update></Update>,
+                    loader: ({params})=>fetch(`http://localhost:5000/orders/${params.id}`)
+                  },
             
             {
                 path: '*',

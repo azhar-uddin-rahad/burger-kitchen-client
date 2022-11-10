@@ -86,7 +86,8 @@ const CheckOut = () => {
     <input className='btn' type="submit"  value="Enter Your Review"/>
        </form>
        
-   
+      
+
     {orders.map(message => <div className='mb-10' key={_id}>
         <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
