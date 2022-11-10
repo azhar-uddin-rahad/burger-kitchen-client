@@ -1,15 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../pages/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const{user,logOut } =useContext(AuthContext);
+    const handalseLogOut=()=>{
+      logOut()
+      .then()
+      .catch(error => console.log(error)) 
+  }
 
 
     const menu =
      <>
 
      <li><Link to="">Home</Link></li>
-     <li><Link to='/login'>Login</Link></li>
-    <li><Link to='/register'>Register</Link></li>
+     <li><Link to='/services'>Services</Link></li>
+
+     {
+        user?.email ?
+        <> <li><Link to='/order' className='btn btn-ghost' >Review All</Link></li>
+      <li><button to='' className='btn btn-ghost' onClick={handalseLogOut}>Sign out</button></li>
+        
+        </>
+        :
+        <>
+         <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/register'>Register</Link></li>
+        </>
+
+     }
+    
+   
+    
+   
      
      
      

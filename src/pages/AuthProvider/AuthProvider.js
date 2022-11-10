@@ -1,33 +1,39 @@
 
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/firebase.config';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth';
 
 export const AuthContext =createContext();
 const  auth =getAuth(app);
 const provider=new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
-    const [user,SetUser] =useState(null);
-    const [loader,setLoader]=useState(true);
+    const [user,setUser] =useState(null);
+    const [loading,setLoading]=useState(true);
 
     const createUser=(email,password)=>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
     }
     const LoginUser=(email,password)=>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,password);
     }
     const providerLogin =()=>{
+        setLoading(true)
         return signInWithPopup(auth,provider)
     }
-
+    const logOut=()=>{
+        localStorage.removeItem('geniusToken')
+       return  signOut(auth);
+    }
 
 
 
     useEffect(() =>{
         const unsubscribed=onAuthStateChanged(auth,currentUser=>{
             console.log(currentUser);
-            SetUser(currentUser);
-            setLoader(false)
+            setUser(currentUser);
+            setLoading(false)
         })
         return()=>{
             return unsubscribed();
@@ -35,10 +41,12 @@ const AuthProvider = ({children}) => {
     },[] )
     const authinfo={
         user,
-        loader,
+        setLoading,
+        loading,
         createUser,
         LoginUser,
-        providerLogin
+        providerLogin,
+        logOut
 
     }
 
