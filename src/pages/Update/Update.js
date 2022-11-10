@@ -7,7 +7,7 @@ const Update = () => {
   const handleInputUpdate = (event) => {
     event.preventDefault();
     console.log(user);
-    fetch(`http://localhost:5000/orders/${singleUserData._id}`, {
+    fetch(`https://berger-food-kitchen-server.vercel.app/orders/${singleUserData._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

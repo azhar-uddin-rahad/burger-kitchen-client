@@ -67,7 +67,7 @@ if (data.acknowledged){
        <>
          <span>
         <p className='text-4xl font-bold text-center'> Please log in to add review</p>
-        <Link to="login"><button className='btn btn-outline btn btn-primary py-0 px-10 mt-10'></button></Link>
+        <Link to="/login"><button className='btn btn-outline btn btn-primary py-0 px-10 mt-10'>Please login First</button></Link>
          </span>
        </>
 

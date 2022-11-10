@@ -6,7 +6,7 @@ const Order = () => {
     const {user,logOut}=useContext(AuthContext);
     const [orders,setOrders]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+        fetch(`https://berger-food-kitchen-server.vercel.app/orders?email=${user?.email}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('geniusToken')}`
             }
@@ -24,7 +24,7 @@ const Order = () => {
     const handleDelete= id => {
         const proceed = window.confirm("Are you Delete this Items");
         if(proceed){
-            fetch(`http://localhost:5000/orders/${id}`,{
+            fetch(`https://berger-food-kitchen-server.vercel.app/orders/${id}`,{
                 method: 'DELETE',
                 headers:{
                     authorization: `Bearer ${localStorage.getItem('geniusToken')}`
@@ -43,7 +43,7 @@ const Order = () => {
     }
     const handleStatusUpdate=id=>{
         console.log(id);
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://berger-food-kitchen-server.vercel.app/orders/${id}`,{
             method: 'PATCH',
             headers:{
                 'content-type' : 'application/json',

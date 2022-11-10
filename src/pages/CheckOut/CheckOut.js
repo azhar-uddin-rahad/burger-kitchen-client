@@ -8,7 +8,7 @@ const CheckOut = () => {
     const {user,logOut}=useContext(AuthContext)
      const [orders,setOrders]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+        fetch(`https://berger-food-kitchen-server.vercel.app/orders?email=${user?.email}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('geniusToken')}`
             }
@@ -47,7 +47,7 @@ const CheckOut = () => {
             message
         }
 
-        fetch('http://localhost:5000/orders',{
+        fetch('https://berger-food-kitchen-server.vercel.app/orders',{
             method: 'POST',
             headers:{
                 'content-type' : 'application/json'

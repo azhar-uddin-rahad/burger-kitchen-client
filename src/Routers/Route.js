@@ -37,7 +37,7 @@ const router =createBrowserRouter([
                 {
                     path:'/servicedetails/:id',
                     element: <ServiceDetails></ServiceDetails>,
-                    loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({params})=> fetch(`https://berger-food-kitchen-server.vercel.app/services/${params.id}`)
                 },
               
                 {
@@ -48,7 +48,7 @@ const router =createBrowserRouter([
                 {
                     path:'/update/:id',
                     element: <Update></Update>,
-                    loader: ({params})=>fetch(`http://localhost:5000/orders/${params.id}`)
+                    loader: ({params})=>fetch(`https://berger-food-kitchen-server.vercel.app/orders/${params.id}`)
                   },
             
             {
