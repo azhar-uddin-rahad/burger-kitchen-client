@@ -8,4 +8,5 @@
 the live website link:
 https://berger-food-kitchen-client.web.app/
 
-the server site link is he
+the server site link is here:
+https://berger-food-kitchen-server.vercel.app/
