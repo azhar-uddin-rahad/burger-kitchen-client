@@ -1,3 +1,4 @@
+import Blog from "../pages/Blog/Blog";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import ServiceDetails from "../pages/Homes/Serviced/ServiceDetails";
 import Services from "../pages/Homes/Serviced/Services";
@@ -43,6 +44,11 @@ const router =createBrowserRouter([
                 {
                     path:'/order',
                     element: <PrivateRouter><Order></Order></PrivateRouter>
+                    
+                },
+                {
+                    path:'/blog',
+                    element:<Blog></Blog>
                     
                 },
                 {
