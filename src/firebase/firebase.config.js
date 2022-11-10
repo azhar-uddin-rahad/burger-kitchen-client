@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAMdgvcRFfzb6PmK0N_5l_P4CdL6-WPNhQ",
-  authDomain: "berger-food-kitchen-client.firebaseapp.com",
-  projectId: "berger-food-kitchen-client",
-  storageBucket: "berger-food-kitchen-client.appspot.com",
-  messagingSenderId: "719414843845",
-  appId: "1:719414843845:web:db37dbe2510270799553ac"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

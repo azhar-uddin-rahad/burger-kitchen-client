@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { PhotoProvider, PhotoView } from "react-photo-view";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from "react-router-dom";
 
 const ServicesCard = ({ service }) => {
